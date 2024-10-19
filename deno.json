@@ -1,0 +1,27 @@
+{
+  "tasks": {
+    "dev": "deno run --env=.env.local -A --watch main.ts",
+    "start": "deno run --env=.env.prod -A main.ts",
+    "format": "deno fmt",
+    "lint": "deno lint",
+    "test": "deno test -A",
+    "compile": "deno compile main.ts"
+  },
+  "imports": {
+    "@oak/oak": "jsr:@oak/oak@^17.1.0",
+    "@std/assert": "jsr:@std/assert@1",
+    "@std/expect": "jsr:@std/expect@^1.0.5",
+    "@tajpouria/cors": "jsr:@tajpouria/cors@^1.2.1",
+    "@teemukurki/rate-limiter": "jsr:@teemukurki/rate-limiter@^0.0.3"
+  },
+  "compilerOptions": {
+    "strict": true
+  },
+  "lint": {
+    "exclude": ["*.test.ts"]
+  },
+  "fmt": {
+    "exclude": ["README.md"]
+  },
+  "unstable": ["cron"]
+}
